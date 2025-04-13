@@ -67,8 +67,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     try:
-        output_file = extract_text_with_pdfplumber(pdf_path)
-        # output_file = extract_text_with_tesseract(pdf_path)
+        # output_file = extract_text_with_pdfplumber(pdf_path)
+        output_file = extract_text_with_tesseract(pdf_path)
 
         print(f"Text extracted and saved to {output_file}")
         print(output_file)  # Ensure the output file path is printed
