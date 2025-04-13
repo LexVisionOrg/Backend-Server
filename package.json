@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.1",
+    "lexvision": "file:"
+  },
+  "scripts": {
+    "start": "node extract_pdf_text.js",
+    "dev": "nodemon extract_pdf_text.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "name": "lexvision",
+  "version": "1.0.0",
+  "main": "extract_pdf_text.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
