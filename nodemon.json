@@ -1,6 +1,0 @@
-{
-  "watch": ["extract_pdf_text.js", "extract_pdf_text.py"],
-  "ext": "js,py",
-  "ignore": ["uploads/*"],
-  "exec": "node extract_pdf_text.js"
-}

@@ -70,7 +70,8 @@ app.post('/upload', (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 5000; // Use Railway's dynamic port
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running at http://0.0.0.0:${PORT}`);
+// Start the server
+const PORT = 5000; // Fixed port for Render deployment
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
 });
