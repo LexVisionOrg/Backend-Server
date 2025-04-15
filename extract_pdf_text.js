@@ -40,7 +40,7 @@ app.post('/upload', (req, res) => {
             return res.status(500).send('Error saving file.');
         }
 
-        // Call the Python script to extract text
+        // Calling the Python script to extract text
         const pythonScript = path.join(__dirname, 'extract_pdf_text.py');
         const command = `python "${pythonScript}" "${uploadPath}"`;
 
@@ -50,7 +50,7 @@ app.post('/upload', (req, res) => {
                 return res.status(500).send('Error extracting text from PDF.');
             }
 
-            // Extract the output file path from the Python script's stdout
+            // Extracting the output file path from the Python script's stdout
             const outputFilePath = stdout.trim().split('\n').pop();
             if (!fs.existsSync(outputFilePath)) {
                 console.error('Output file not found:', outputFilePath);
@@ -62,7 +62,7 @@ app.post('/upload', (req, res) => {
                     console.error('Error sending file:', err);
                 }
 
-                // Clean up uploaded and generated files
+                // uploaded and generated files clean up
                 fs.unlinkSync(uploadPath);
                 fs.unlinkSync(outputFilePath);
             });
@@ -70,8 +70,7 @@ app.post('/upload', (req, res) => {
     });
 });
 
-// Start the server
-const PORT = 5000;
-app.listen(PORT, () => {
-    console.log(`Server running at http://127.0.0.1:${PORT}`);
+const PORT = process.env.PORT || 5000; // Use Railway's dynamic port
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running at http://0.0.0.0:${PORT}`);
 });
