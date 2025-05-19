@@ -1,5 +1,5 @@
 # Backend-Server
-Initial repo for all backend tasks
+Repo for all backend tasks of LexVision.
 
 Latest Update: implemented text extraction using both pdfplumber as well as tesseract.
 - For text-based (unscanned) PDFs, pdfplumber is better with 100% accuracy.
